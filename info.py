@@ -77,9 +77,9 @@ PREMIUM_LOGS = get_id(environ.get('PREMIUM_LOGS', ''), 0)
 
 DELETE_CHANNELS = [get_id(dch) for dch in environ.get('DELETE_CHANNELS', '').split() if dch.strip()]
 
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '')
-reqst_channel = environ.get('REQST_CHANNEL_ID', '')
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '')
+support_chat_id = environ.get('SUPPORT_CHAT_ID', 'https://t.me/request_gruop')
+reqst_channel = environ.get('REQST_CHANNEL_ID', 'https://t.me/jacpotfilmm')
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/request_gruop')
 
 # FORCE_SUB
 auth_req_channels = environ.get("AUTH_REQ_CHANNELS", "")
