@@ -39,9 +39,9 @@ def get_id(value, default=0):
 # ============================
 
 SESSION = environ.get('SESSION', 'royal_search')
-API_ID = get_int(environ.get('API_ID', ''), 0)
-API_HASH = environ.get('API_HASH', '')
-BOT_TOKEN = environ.get('BOT_TOKEN', '')
+API_ID = get_int(environ.get('API_ID', '24776633'), 0)
+API_HASH = environ.get('API_HASH', '57b1f632044b4e718f5dce004a988d69')
+BOT_TOKEN = environ.get('BOT_TOKEN', '8748178338:AAFkn8pm-ATKP9D8TOJaVKNwhj6LdzzBaKg')
 
 
 # ============================
@@ -68,7 +68,7 @@ FSUB_PICS = environ.get('FSUB_PICS', 'https://graph.org/file/7478ff3eac37f4329c3
 # Admin, Channels & Users Configuration
 # ============================
 
-ADMINS = [get_id(admin) for admin in environ.get('ADMINS', '').split() if admin.strip()]
+ADMINS = [get_id(admin) for admin in environ.get('ADMINS', '8248792819').split() if admin.strip()]
 CHANNELS = [get_id(ch) for ch in environ.get('CHANNELS', '').split() if ch.strip()]
 
 LOG_CHANNEL = get_id(environ.get('LOG_CHANNEL', ''), 0)
@@ -106,7 +106,7 @@ STAR_PREMIUM_PLANS = {
 # MongoDB Configuration
 # ============================
 
-DATABASE_URI = environ.get('DATABASE_URI', '')
+DATABASE_URI = environ.get('DATABASE_URI', 'mongodb+srv://mongodbpy_db_user:pPgtRKyHsm8GvJF2@cluster0.u2ft5ps.mongodb.net/?appName=Cluster0')
 DATABASE_NAME = environ.get('DATABASE_NAME', 'Cluster0')
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'royal_files')
 
