@@ -85,7 +85,7 @@ API_HASH = environ.get(
 
 BOT_TOKEN = environ.get(
     "BOT_TOKEN",
-    "YOUR_BOT_TOKEN"
+    "8748178338:AAFkn8pm-ATKP9D8TOJaVKNwhj6LdzzBaKg"
 )
 
 
