@@ -12,8 +12,8 @@ from pyrogram.types import (
 from pyrogram.errors import MessageNotModified
 
 # আপনার প্রজেক্ট অনুযায়ী এগুলো ঠিক করুন
-# from info import Config
-# from database import db
+from info import Config
+from database import db
 
 logger = logging.getLogger(__name__)
 
