@@ -12,7 +12,7 @@ from pyrogram.types import (
 from pyrogram.errors import MessageNotModified
 
 # আপনার প্রজেক্ট অনুযায়ী এগুলো ঠিক করুন
-from database import db
+from database.users_chats_db import db
 
 logger = logging.getLogger(__name__)
 
