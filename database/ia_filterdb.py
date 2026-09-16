@@ -30,7 +30,8 @@ instance = Instance.from_db(db)
 # secondary db
 client2 = AsyncIOMotorClient(DATABASE_URI2)
 db2 = client2[DATABASE_NAME]
-instance2 = Instance2.from_db(db2)
+# FIX: Changed Instance2 to Instance
+instance2 = Instance.from_db(db2)
 
 
 @instance.register
@@ -90,7 +91,7 @@ async def save_file(media):
     """Save file in database, with detailed logging."""
     file_id, file_ref = unpack_new_file_id(media.file_id)
     
-    # যদি file_name None থাকে, তবে caption কে নাম হিসেবে নেওয়া হবে
+    # যদি file_name None থাকে, তবে caption কে নাম হিসেবে নেওয়া হবে
     if media.file_name:
         raw_name = media.file_name
     elif media.caption:
