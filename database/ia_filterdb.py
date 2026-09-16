@@ -30,7 +30,7 @@ instance = Instance.from_db(db)
 # secondary db
 client2 = AsyncIOMotorClient(DATABASE_URI2)
 db2 = client2[DATABASE_NAME]
-instance2 = Instance.from_db(db2)
+instance2 = Instance2.from_db(db2)
 
 
 @instance.register
@@ -89,10 +89,20 @@ async def check_db_size(db):
 async def save_file(media):
     """Save file in database, with detailed logging."""
     file_id, file_ref = unpack_new_file_id(media.file_id)
+    
+    # যদি file_name None থাকে, তবে caption কে নাম হিসেবে নেওয়া হবে
+    if media.file_name:
+        raw_name = media.file_name
+    elif media.caption:
+        raw_name = media.caption.caption if hasattr(media.caption, 'caption') else str(media.caption)
+    else:
+        raw_name = "Unknown"
+        
     file_name = re.sub(
-        r"[_\-\.#+$%^&*()!~`,;:\"'?/<>\[\]{}=|\\]", " ", str(media.file_name)
+        r"[_\-\.#+$%^&*()!~`,;:\"'?/<>\[\]{}=|\\]", " ", str(raw_name)
     )
     file_name = re.sub(r"\s+", " ", file_name).strip()
+    
     saveMedia = Media
     target_db = "Primary"
     if MULTIPLE_DB:
@@ -138,6 +148,7 @@ async def save_file(media):
     logger.info(f"[SUCCESS] '{file_name}' saved to {target_db} DB.")
     return True, 1
 
+
 async def get_search_results(chat_id, query, file_type=None, max_results=None, offset=0, filter=False):
     if chat_id is not None:
         settings = await get_settings(int(chat_id))
@@ -149,9 +160,7 @@ async def get_search_results(chat_id, query, file_type=None, max_results=None, o
                 settings = await get_settings(int(chat_id))
                 max_results = 10 if settings.get("max_btn") else int(MAX_B_TN)
 
-    # This is the new "middle-ground" regex logic for speed and flexibility
     if isinstance(query, list):
-        # This part handles season searches etc., where you need to match any of the full phrases.
         raw_pattern = '|'.join(re.escape(q.strip()) for q in query if q.strip())
         regex_list = [re.compile(raw_pattern, re.IGNORECASE)] if raw_pattern else []
         
@@ -164,13 +173,10 @@ async def get_search_results(chat_id, query, file_type=None, max_results=None, o
         if not query:
             return [], None, 0
             
-        # This is the key change for balancing speed and flexibility
         if ' ' in query:
-            # For multi-word queries, allow spaces, dots, or hyphens between words.
             words = [re.escape(word) for word in query.split()]
             raw_pattern = r'.*'.join(words)
         else:
-            # For single-word queries, use a flexible substring search.
             raw_pattern = re.escape(query)
 
         try:
@@ -186,7 +192,6 @@ async def get_search_results(chat_id, query, file_type=None, max_results=None, o
     if file_type:
         filter_mongo["file_type"] = file_type
     
-    # The rest of the function remains the same, using parallel queries.
     if ULTRA_FAST_MODE:
         limit = max_results + 1
         find_tasks = [Media.find(filter_mongo).sort("$natural", -1).skip(offset).limit(limit).to_list(length=limit)]
@@ -231,6 +236,7 @@ async def get_search_results(chat_id, query, file_type=None, max_results=None, o
             next_offset = ""
 
     return files, next_offset, total_results
+
 
 async def get_bad_files(query, file_type=None):
     query = query.strip()
