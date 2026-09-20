@@ -41,7 +41,7 @@ def get_id(value, default=0):
 SESSION = environ.get('SESSION', 'royal_search')
 API_ID = get_int(environ.get('API_ID', '24776633'), 0)
 API_HASH = environ.get('API_HASH', '57b1f632044b4e718f5dce004a988d69')
-BOT_TOKEN = environ.get('BOT_TOKEN', '8748178338:AAFkn8pm-ATKP9D8TOJaVKNwhj6LdzzBaKg')
+BOT_TOKEN = environ.get('BOT_TOKEN', '')
 
 
 # ============================
