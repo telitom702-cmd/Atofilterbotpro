@@ -78,7 +78,7 @@ PREMIUM_LOGS = get_id(environ.get('PREMIUM_LOGS', ''), 0)
 DELETE_CHANNELS = [get_id(dch) for dch in environ.get('DELETE_CHANNELS', '').split() if dch.strip()]
 
 support_chat_id = environ.get('SUPPORT_CHAT_ID', 'https://t.me/request_gruop')
-reqst_channel = environ.get('REQST_CHANNEL_ID', 'https://t.me/jacpotfilmm')
+reqst_channel = environ.get('REQST_CHANNEL_ID', 'https://t.me/DramaZGroup')
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/request_gruop')
 
 # FORCE_SUB
@@ -164,8 +164,8 @@ THREE_VERIFY_GAP = get_int(environ.get('THREE_VERIFY_GAP', 54000), 54000)
 # ============================
 
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/request_gruop')
-OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/request_gruop')
-UPDATE_CHNL_LNK = environ.get('UPDATE_CHNL_LNK', 'https://t.me/jacpotfilmm')
+OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/DramaZGroup')
+UPDATE_CHNL_LNK = environ.get('UPDATE_CHNL_LNK', 'https://t.me/DramaZGroup')
 
 
 # ============================
