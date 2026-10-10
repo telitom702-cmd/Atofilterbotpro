@@ -95,15 +95,18 @@ async def pm_text(bot, message):
         else:
             await message.reply_text(
                 text=(
-                    f"<b>🙋 ʜᴇʏ {user} 😍 ,\n\n"
-                    "𝒀𝒐𝒖 𝒄𝒂𝒏 𝒔𝒆𝒂𝒓𝒄𝒉 𝒇𝒐𝒓 𝒎𝒐𝒗𝒊𝒆𝒔 𝒐𝒏𝒍𝒚 𝒐𝒏 𝒐𝒖𝒓 𝑴𝒐𝒗𝒊𝒆 𝑮𝒓𝒐𝒖𝒑. 𝒀𝒐𝒖 𝒂𝒓𝒆 𝒏𝒐𝒕 𝒂𝒍𝒍𝒐𝒘𝒆𝒅 𝒕𝒐 𝒔𝒆𝒂𝒓𝒄𝒉 𝒇𝒐𝒓 𝒎𝒐𝒗𝒊𝒆𝒔 𝒐𝒏 𝑫𝒊𝒓𝒆𝒄𝒕 𝑩𝒐𝒕. 𝑷𝒍𝒆𝒂𝒔𝒆 𝒋𝒐𝒊𝒏 𝒐𝒖𝒓 𝒎𝒐𝒗𝒊𝒆 𝒈𝒓𝒐𝒖𝒑 𝒃𝒚 𝒄𝒍𝒊𝒄𝒌𝒊𝒏𝒈 𝒐𝒏 𝒕𝒉𝒆  𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑯𝑬𝑹𝑬 𝒃𝒖𝒕𝒕𝒐𝒏 𝒈𝒊𝒗𝒆𝒏 𝒃𝒆𝒍𝒐𝒘 𝒂𝒏𝒅 𝒔𝒆𝒂𝒓𝒄𝒉 𝒚𝒐𝒖𝒓 𝒇𝒂𝒗𝒐𝒓𝒊𝒕𝒆 𝒎𝒐𝒗𝒊𝒆 𝒕𝒉𝒆𝒓𝒆 👇\n\n"
-                    "<blockquote>"
-                    "आप केवल हमारे 𝑴𝒐𝒗𝒊𝒆 𝑮𝒓𝒐𝒖𝒑 पर ही 𝑴𝒐𝒗𝒊𝒆 𝑺𝒆𝒂𝒓𝒄𝒉 कर सकते हो । "
-                    "आपको 𝑫𝒊𝒓𝒆𝒄𝒕 𝑩𝒐𝒕 पर 𝑴𝒐𝒗𝒊𝒆 𝑺𝒆𝒂𝒓𝒄𝒉 करने की 𝑷𝒆𝒓𝒎𝒊𝒔𝒔𝒊𝒐𝒏 नहीं है कृपया नीचे दिए गए 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑯𝑬𝑹𝑬 वाले 𝑩𝒖𝒕𝒕𝒐𝒏 पर क्लिक करके हमारे 𝑴𝒐𝒗𝒊𝒆 𝑮𝒓𝒐𝒖𝒑 को 𝑱𝒐𝒊𝒏 करें और वहां पर अपनी मनपसंद 𝑴𝒐𝒗𝒊𝒆 𝑺𝒆𝒂𝒓𝒄𝒉 सर्च करें ।\n\n"
-                    "আপনি শুধুমাত্র আমাদের 𝑴𝒐𝒗𝒊𝒆 𝑮𝒓𝒐𝒖𝒑-এ মুভি সার্চ করতে পারবেন। "
-                    "ডাইরেক্ট বটে মুভি সার্চ করার অনুমতি নেই। "
-                    "দয়া করে নিচে দেওয়া 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑯𝑬𝑹𝑬 বাটনে ক্লিক করে আমাদের গ্রুপে জয়েন করুন এবং সেখানে আপনার পছন্দের মুভিটি সার্চ করুন।"
-                    "</blockquote></b>"
+                    f"🙋 <b>Hey {user}</b> 😍,\n\n"
+"You can search for movies only on our <b>Movie Group</b>. "
+"You are not allowed to search for movies on Direct Bot. "
+"Please join our movie group by clicking on the <b>REQUEST HERE</b> button given below and search your favorite movie there 👇\n\n"
+"━━━━━━━━━━━━━━━━━━━\n\n"
+"आप केवल हमारे <b>Movie Group</b> पर ही <b>Movie Search</b> कर सकते हो। "
+"आपको <b>Direct Bot</b> पर <b>Movie Search</b> करने की अनुमति नहीं है। "
+"कृपया नीचे दिए गए <b>REQUEST HERE</b> वाले बटन पर क्लिक करके हमारे <b>Movie Group</b> को Join करें और वहां पर अपनी मनपसंद <b>Movie Search</b> करें।\n\n"
+"━━━━━━━━━━━━━━━━━━━\n\n"
+"আপনি শুধুমাত্র আমাদের <b>Movie Group</b>-এ মুভি সার্চ করতে পারবেন। "
+"ডাইরেক্ট বটে মুভি সার্চ করার অনুমতি নেই। "
+"দয়া করে নিচে দেওয়া <b>REQUEST HERE</b> বাটনে ক্লিক করে আমাদের গ্রুপে জয়েন করুন এবং সেখানে আপনার পছন্দের মুভিটি সার্চ করুন।"
                 ), reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=GRP_LNK)]]))
             await bot.send_message(chat_id=LOG_CHANNEL,
                                    text=(
